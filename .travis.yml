@@ -15,18 +15,12 @@ branches:
   - skeleton
 jobs:
   include:
-  - stage: check-black
+  - stage: docs-and-lint
     python: *latest_py3
     install: pip install tox
-    script: tox -e black
-  - stage: build-docs
-    python: *latest_py3
-    install: pip install tox
-    script: tox -e docs
-  - stage: lint-check
-    python: *latest_py3
-    install: pip install tox
-    script: skip
+    script:
+      tox -e black
+      tox -e docs
     after_script: tox -e lint
 after_success:
 - coveralls
