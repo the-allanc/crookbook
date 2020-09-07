@@ -19,8 +19,8 @@ jobs:
     python: *latest_py3
     install: pip install tox
     script:
-      tox -e black
-      tox -e docs
+    - tox -e black
+    - tox -e docs
     after_script: tox -e lint
 after_success:
 - coveralls

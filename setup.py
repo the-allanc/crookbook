@@ -13,7 +13,7 @@ with io.open('README.rst', encoding='utf-8') as readme:
 def get_definition(prefix):
     for line in readme.split('\n'):
         if line.startswith(prefix):
-            return line[len(prefix):].strip()
+            return line[len(prefix) :].strip()
     err = 'no line in README.rst with prefix {!r}'.format(prefix)
     raise AssertionError(err)
 
@@ -88,8 +88,7 @@ params = dict(
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    entry_points={
-    },
+    entry_points={},
 )
 
 if __name__ == '__main__':
