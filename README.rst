@@ -32,7 +32,7 @@
 .. |License| image:: https://img.shields.io/pypi/l/crookbook.svg
     :target: license_
     :alt: License
-.. |Code Climate| image:: https://img.shields.io/codeclimate/issues/github/the-allanc/crookbook.svg
+.. |Code Climate| image:: https://img.shields.io/codeclimate/issues/the-allanc/crookbook.svg
     :target: codeclimate_
     :alt: Code Climate
 .. |Black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
