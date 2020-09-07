@@ -67,7 +67,7 @@ params = dict(
             'pylint',
         ],
         'manage': [
-            'black',
+            'black; python_version >= "3.5"',
             'bump2version>=0.5.6',
             'tox>=2.4',
             'pip-tools',
