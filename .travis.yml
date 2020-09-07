@@ -9,13 +9,16 @@ before_install: ['! grep -R SKELETON | grep -v grep']
 install:
 - pip install -U --upgrade-strategy=eager coveralls tox tox-travis
 script:
-- tox -e black
 - tox
 branches:
   except:
   - skeleton
 jobs:
   include:
+  - stage: check-black
+    python: *latest_py3
+    install: pip install tox
+    script: tox -e black
   - stage: build-docs
     python: *latest_py3
     install: pip install tox
