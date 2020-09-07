@@ -61,7 +61,7 @@ if os.path.isfile('../README.rst'):
         repo_url = None
         for line in readme.readlines():
             if line.startswith(repo_prefix):
-                repo_url = line[len(repo_prefix):].strip()
+                repo_url = line[len(repo_prefix) :].strip()
                 break
         del readme, repo_prefix, line
 

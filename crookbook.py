@@ -7,7 +7,6 @@ def essence(attrs, mutable=True):
         attrs = attrs.split(' ')
 
     def essence_maker(cls):
-
         def __essence__(self):
             return tuple(getattr(self, attr) for attr in attrs)
 
@@ -67,17 +66,17 @@ def essence(attrs, mutable=True):
 
 
 def described(inner):
-
     def described_maker(cls):
-
         def repr_(self):
             return ('<{0.__class__.__name__} ' + inner + '>').format(self)
 
         setattr(cls, '__repr__', repr_)
 
         if '__str__' not in cls.__dict__:
+
             def str_(self):
                 return repr(self)
+
             setattr(cls, '__str__', str_)
 
         return six.python_2_unicode_compatible(cls)
@@ -86,7 +85,6 @@ def described(inner):
 
 
 class AttrItems(object):
-
     def __getitem__(self, key):
         try:
             return getattr(self, key)
@@ -111,7 +109,6 @@ class AttrItems(object):
 
 
 class ItemAttrs(object):
-
     def __getattr__(self, name):
         try:
             return self[name]
@@ -132,7 +129,6 @@ class ItemAttrs(object):
 
 
 class MappingNS(ItemAttrs):
-
     def __repr__(self):
         keys = sorted(self)
         items = ("{}={!r}".format(k, self[k]) for k in keys)
