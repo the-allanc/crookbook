@@ -3,32 +3,47 @@ import operator
 import pytest
 import six
 
+
 class ThatBase(object):
     def __init__(self, **kwargs):
         for key, value in kwargs.items():
             setattr(self, 'attr_' + key, value)
 
+
 @essence(['attr_one'])
-class A(ThatBase): pass
+class A(ThatBase):
+    pass
+
 
 @essence(['attr_one', 'attr_two'], mutable=False)
-class B(A): pass
+class B(A):
+    pass
+
 
 @essence(['attr_one'])
-class C(ThatBase): pass
+class C(ThatBase):
+    pass
+
 
 @essence(['attr_one', 'attr_two'])
-class D(A): pass
+class D(A):
+    pass
 
-class E(A): pass
-class F(A): pass
+
+class E(A):
+    pass
+
+
+class F(A):
+    pass
+
 
 @essence(['attr_two', 'attr_one'])
-class G(A): pass
+class G(A):
+    pass
 
 
 class TestEquality:
-
     def test_essenceless(self):
         a = A(one=1, two=2)
         tb = ThatBase(one=1, two=2)
@@ -87,7 +102,6 @@ class TestEquality:
 
 
 class TestOrdering:
-
     @staticmethod
     def assert_incomparable(val1, strcomp, val2):
         func = getattr(operator, strcomp)
@@ -167,7 +181,6 @@ class TestOrdering:
 
 
 class TestHash:
-
     def test_unhashable(self):
         # unhashable by default.
         with pytest.raises(TypeError):
@@ -183,17 +196,18 @@ class TestHash:
 
 
 class TestAttrSpec:
-
     def test_single_attr(self):
         @essence('attr_one')
-        class X(ThatBase): pass
+        class X(ThatBase):
+            pass
 
         x = X(one=1)
         assert x.__essence__() == (1,)
 
     def test_multi_attr_in_string(self):
         @essence('attr_one attr_two')
-        class X(ThatBase): pass
+        class X(ThatBase):
+            pass
 
         x = X(one=1, two=2)
         assert x.__essence__() == (1, 2)

@@ -1,15 +1,18 @@
 from crookbook import described, essence
 import six
 
+
 @essence(['site', 'tld'])
 @described(inner='for "{0.site}" [{0.tld}]')
-class Webpage(object): pass
+class Webpage(object):
+    pass
+
 
 @described(inner='for "{0.site}" [{0.tld}]')
 class MyWebpage(object):
-
     def __str__(self):
         return 'My Webpage'
+
 
 def test_described_inner():
     wp = Webpage()
@@ -20,6 +23,7 @@ def test_described_inner():
     assert str(wp) == '<Webpage for "google" [nl]>'
     if six.PY2:
         assert unicode(wp) == '<Webpage for "google" [nl]>'
+
 
 def test_described_inner_with_explicit_str():
     wp = MyWebpage()
