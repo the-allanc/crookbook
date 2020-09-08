@@ -22,6 +22,7 @@ jobs:
     - tox -e black
     - tox -e docs
     after_script: tox -e lint
+    after_success: []
 after_success:
 - coveralls
 cache: pip
