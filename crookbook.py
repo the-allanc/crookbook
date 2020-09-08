@@ -34,8 +34,9 @@ def essence(attrs, mutable=True):
 
         setattr(cls, '__hash__', None if mutable else hash_)
 
-        # Would use total_ordering, but the recursive comparison issue is still present in
-        # Python 2.7, so have to work this way instead.
+        # Would use total_ordering, but the recursive comparison issue
+        # is still present in Python 2.7, so have to work this way
+        # instead.
         def lt(self, other):
             if isinstance(other, cls):
                 return self.__essence__() < cls.__essence__(other)

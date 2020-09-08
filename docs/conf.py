@@ -70,10 +70,10 @@ if os.path.isfile('../README.rst'):
 
 if os.path.isfile('index.rst'):
     with io.open('index.rst', encoding='utf-8') as index_contents:
-        # If we're embedding an API file in the main document (presumably
-        # just one of them), then exclude individual generation of the API
-        # document file, otherwise Sphinx will complain about duplicate
-        # object description.
+        # If we're embedding an API file in the main document
+        # (presumably just one of them), then exclude individual
+        # generation of the API document file, otherwise Sphinx will
+        # complain about duplicate object description.
         if '.. include:: api/' in index_contents.read():
             exclude_patterns = ['api/*.rst']
         del index_contents
