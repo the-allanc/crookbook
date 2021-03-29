@@ -5,78 +5,178 @@
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
 -e file:./#egg=crookbook  # via -r requirements-dev.in
-alabaster==0.7.12         # via sphinx
-allanc-sphinx[yeen]==0.4  # via crookbook
-appdirs==1.4.4            # via black, virtualenv
-astroid==2.4.2            # via pylint
-attrs==20.2.0             # via pytest
-babel==2.8.0              # via sphinx
-black==20.8b1             # via crookbook
-bump2version==1.0.0       # via crookbook
-certifi==2020.6.20        # via requests
-chardet==3.0.4            # via requests
-click==7.1.2              # via black, pip-tools
-collective.checkdocs==0.2  # via crookbook
-colorama==0.4.3           # via radon
-coverage==5.2.1           # via pytest-cov
-dataclasses==0.7          # via black
-distlib==0.3.1            # via virtualenv
-docutils==0.16            # via collective.checkdocs, sphinx
-filelock==3.0.12          # via tox, virtualenv
-flake8-polyfill==1.0.2    # via radon
-flake8==3.8.3             # via crookbook, flake8-polyfill
-future==0.18.2            # via radon
-idna==2.10                # via requests
-imagesize==1.2.0          # via sphinx
-importlib-metadata==1.7.0  # via flake8, jaraco.packaging, pluggy, pytest, rst.linker, tox, virtualenv
-importlib-resources==3.0.0  # via virtualenv
-iniconfig==1.0.1          # via pytest
-isort==5.5.1              # via pylint
-jaraco.packaging==8.1.0   # via crookbook
-jinja2==2.11.2            # via sphinx
-lazy-object-proxy==1.4.3  # via astroid
-mando==0.6.4              # via radon
-markupsafe==1.1.1         # via jinja2
-mccabe==0.6.1             # via flake8, pylint
-more-itertools==8.5.0     # via pytest
-mypy-extensions==0.4.3    # via black
-packaging==20.4           # via pytest, pytest-sugar, sphinx, tox
-pathspec==0.8.0           # via black
-pip-tools==5.3.1          # via crookbook
-pluggy==0.13.1            # via pytest, tox
-py==1.9.0                 # via pytest, tox
-pycodestyle==2.6.0        # via flake8
-pyflakes==2.2.0           # via flake8
-pygments==2.6.1           # via sphinx
-pylint==2.6.0             # via crookbook
-pyparsing==2.4.7          # via packaging
-pytest-cov==2.10.1        # via crookbook
-pytest-sugar==0.9.4       # via crookbook
-pytest==6.0.1             # via crookbook, pytest-cov, pytest-sugar
-python-dateutil==2.8.1    # via rst.linker
-pytz==2020.1              # via babel
-radon==4.2.0              # via crookbook
-regex==2020.7.14          # via black
-requests==2.24.0          # via sphinx
-rst.linker==2.0.0         # via crookbook
-six==1.15.0               # via astroid, crookbook, jaraco.packaging, mando, packaging, pip-tools, python-dateutil, tox, virtualenv
-snowballstemmer==2.0.0    # via sphinx
-sphinx==3.2.1             # via crookbook
-sphinxcontrib-applehelp==1.0.2  # via sphinx
-sphinxcontrib-devhelp==1.0.2  # via sphinx
-sphinxcontrib-htmlhelp==1.0.3  # via sphinx
-sphinxcontrib-jsmath==1.0.1  # via sphinx
-sphinxcontrib-qthelp==1.0.3  # via sphinx
-sphinxcontrib-serializinghtml==1.1.4  # via sphinx
-termcolor==1.1.0          # via pytest-sugar
-toml==0.10.1              # via black, pylint, pytest, tox
-tox==3.20.0               # via crookbook
-typed-ast==1.4.1          # via astroid, black
-typing-extensions==3.7.4.3  # via black
-urllib3==1.25.10          # via requests
-virtualenv==20.0.31       # via tox
-wrapt==1.12.1             # via astroid
-zipp==3.1.0               # via importlib-metadata, importlib-resources
+    # via -r requirements-dev.in
+alabaster==0.7.12
+    # via sphinx
+allanc-sphinx[yeen]==0.4
+    # via sanitized-package
+appdirs==1.4.4
+    # via
+    #   black
+    #   virtualenv
+astroid==2.4.2
+    # via pylint
+attrs==20.2.0
+    # via pytest
+babel==2.8.0
+    # via sphinx
+black==20.8b1
+    # via sanitized-package
+bump2version==1.0.0
+    # via sanitized-package
+certifi==2020.6.20
+    # via requests
+chardet==3.0.4
+    # via requests
+click==7.1.2
+    # via
+    #   black
+    #   pip-tools
+collective-checkdocs==0.2
+    # via sanitized-package
+colorama==0.4.3
+    # via radon
+coverage==5.2.1
+    # via pytest-cov
+distlib==0.3.1
+    # via virtualenv
+docutils==0.16
+    # via
+    #   collective-checkdocs
+    #   sphinx
+filelock==3.0.12
+    # via
+    #   tox
+    #   virtualenv
+flake8-polyfill==1.0.2
+    # via radon
+flake8==3.8.3
+    # via
+    #   flake8-polyfill
+    #   sanitized-package
+future==0.18.2
+    # via radon
+idna==2.10
+    # via requests
+imagesize==1.2.0
+    # via sphinx
+iniconfig==1.0.1
+    # via pytest
+isort==5.5.1
+    # via pylint
+jaraco-packaging==8.2.1
+    # via sanitized-package
+jinja2==2.11.2
+    # via sphinx
+lazy-object-proxy==1.4.3
+    # via astroid
+mando==0.6.4
+    # via radon
+markupsafe==1.1.1
+    # via jinja2
+mccabe==0.6.1
+    # via
+    #   flake8
+    #   pylint
+more-itertools==8.5.0
+    # via pytest
+mypy-extensions==0.4.3
+    # via black
+packaging==20.4
+    # via
+    #   pytest
+    #   pytest-sugar
+    #   sphinx
+    #   tox
+pathspec==0.8.0
+    # via black
+pip-tools==5.3.1
+    # via sanitized-package
+pluggy==0.13.1
+    # via
+    #   pytest
+    #   tox
+py==1.9.0
+    # via
+    #   pytest
+    #   tox
+pycodestyle==2.6.0
+    # via flake8
+pyflakes==2.2.0
+    # via flake8
+pygments==2.7.4
+    # via sphinx
+pylint==2.6.0
+    # via sanitized-package
+pyparsing==2.4.7
+    # via packaging
+pytest-cov==2.10.1
+    # via sanitized-package
+pytest-sugar==0.9.4
+    # via sanitized-package
+pytest==6.0.1
+    # via
+    #   pytest-cov
+    #   pytest-sugar
+    #   sanitized-package
+python-dateutil==2.8.1
+    # via rst-linker
+pytz==2020.1
+    # via babel
+radon==4.2.0
+    # via sanitized-package
+regex==2020.7.14
+    # via black
+requests==2.24.0
+    # via sphinx
+rst-linker==2.2.0
+    # via sanitized-package
+six==1.15.0
+    # via
+    #   astroid
+    #   mando
+    #   packaging
+    #   pip-tools
+    #   python-dateutil
+    #   sanitized-package
+    #   tox
+    #   virtualenv
+snowballstemmer==2.0.0
+    # via sphinx
+sphinx==3.2.1
+    # via sanitized-package
+sphinxcontrib-applehelp==1.0.2
+    # via sphinx
+sphinxcontrib-devhelp==1.0.2
+    # via sphinx
+sphinxcontrib-htmlhelp==1.0.3
+    # via sphinx
+sphinxcontrib-jsmath==1.0.1
+    # via sphinx
+sphinxcontrib-qthelp==1.0.3
+    # via sphinx
+sphinxcontrib-serializinghtml==1.1.4
+    # via sphinx
+termcolor==1.1.0
+    # via pytest-sugar
+toml==0.10.1
+    # via
+    #   black
+    #   pylint
+    #   pytest
+    #   tox
+tox==3.20.0
+    # via sanitized-package
+typed-ast==1.4.1
+    # via black
+typing-extensions==3.7.4.3
+    # via black
+urllib3==1.25.10
+    # via requests
+virtualenv==20.0.31
+    # via tox
+wrapt==1.12.1
+    # via astroid
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
